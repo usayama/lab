@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node_express:
+    build: .
+    image: node:9-alpine
+    container_name: node_express
+    environment:
+      NODE_ENV: development
+    working_dir: /app
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./app:/app
