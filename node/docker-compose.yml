@@ -1,0 +1,14 @@
+version: '3'
+services:
+  node:
+    build: .
+    container_name: node
+    environment:
+      NODE_ENV: development
+    working_dir: /root
+    tty: true
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./root:/root
+    command: ["node", "index.js"]
